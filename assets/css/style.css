@@ -1,20 +1,69 @@
-div,
-h1,
-h2,
-p {
-    border: solid 1px black;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root {
+    --hue-nuetral: 200;
+    --hue-wrong: 0;
+    --hue-correct: 145;
+}
+
+body {
+    --hue: var(--hue-nuetral);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: hsl(var(--hue), 100%, 20%);
+    color: white;
+}
+
+.container {
+    width: 800px;
+    max-width: 80%;
+    background-color: grey;
+    border-radius: 5px;
+}
+
+.btn-grid {
+    display: grid;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.answer-btn {
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: 1px solid black;
+}
+
+.btn-correct {
+    background-color: green;
+    color: black;
+}
+
+.btn-wrong {
+    background-color: red;
 }
 
 .center-page {
     display: flex;
-    color: blueviolet;
     flex-direction: column;
     align-items: center;
+    max-width: 80%;
+    margin: 0 auto;
 }
 
 .rules {
     font-size: 40px;
-    color: rgb(73, 40, 2);
+    color: rgb(241, 238, 235);
 }
 
 .btn {
@@ -33,6 +82,7 @@ p {
 .btn:hover {
     box-shadow: 0 2px var(--grey);
     top: -2px;
+    color: white;
 }
 
 .hide {
