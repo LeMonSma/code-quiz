@@ -9,10 +9,9 @@ let timerEl = document.getElementById('score');
 let highScoreEl = document.getElementById('high-score')
 let playerNameEL = document.getElementById('player-name')
 let playerScoreEl = document.getElementById('player-score')
-    // let userNameStor = window.localStorage
-    // let timeLeftStor = window.localStorage
 let timeLeft
 let resetEl = document.getElementById('reset')
+let finalScoreEl = document.getElementById('final-score')
 const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
 
@@ -46,41 +45,41 @@ let timer = function() {
 
 
 const questions = [{
-        question: 'this is a test 1',
+        question: 'what is the difference between using let, and const?',
         answers: [
-            { text: '1', correct: true },
-            { text: '2', correct: false },
-            { text: '3', correct: false },
-            { text: '4', correct: false }
+            { text: 'let can be reassigned and const can not be changed', correct: true },
+            { text: 'there is no difference', correct: false },
+            { text: 'let can not be changed and const can be reassigned', correct: false },
+            { text: 'none of the above are true', correct: false }
         ]
     },
     {
-        question: 'this is a test 2',
+        question: 'what are callbacks?',
         answers: [
-            { text: '1', correct: false },
-            { text: '2', correct: true },
-            { text: '3', correct: false },
-            { text: '4', correct: false }
+            { text: 'functions that have for loops inside of them', correct: false },
+            { text: 'functions that are used as an argument of another function', correct: true },
+            { text: 'a variable set equal to a function', correct: false },
+            { text: 'none of the above are true', correct: false }
         ]
     },
     {
-        question: 'this is a test 3',
+        question: 'which of the following are true',
         answers: [
-            { text: '1', correct: false },
-            { text: '2', correct: false },
-            { text: '3', correct: true },
-            { text: '4', correct: false }
+            { text: '3 === "3"', correct: false },
+            { text: '9 === "9" ', correct: false },
+            { text: '3 === 3', correct: true },
+            { text: 'none of the above are true', correct: false }
         ]
     }
 
     ,
     {
-        question: 'this is a test 4',
+        question: 'what is hoisting in js',
         answers: [
-            { text: '1', correct: false },
-            { text: '2', correct: false },
-            { text: '3', correct: false },
-            { text: '4', correct: true }
+            { text: 'when a coding robot lifts up an object', correct: false },
+            { text: 'when you assign a new value to a variable', correct: false },
+            { text: 'when js automatically takes all functions, variables, classes to the bottome of the scope', correct: false },
+            { text: 'when js automatically takes all funcntions, variables, classes to the top of the scope', correct: true }
         ]
     }
 ]
@@ -190,9 +189,10 @@ function highScore() {
     localStorage.setItem('highScores', JSON.stringify(highScores));
     playerScoreEl.innerHTML = highScores
         .map(score => {
-            return (`<li classs='score'>${score.name}-${score.score}</li>`);
+            return (`<li class='score'>${score.name}-${score.score}</li>`);
         })
         .join('')
+    finalScoreEl.textContent = timeLeft + ""
     resetEl.addEventListener('click', resetQuiz)
 
 
