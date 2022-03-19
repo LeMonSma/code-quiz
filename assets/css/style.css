@@ -95,3 +95,39 @@ body {
     color: red;
     text-align: center;
 }
+
+#score {
+    font-size: 40px;
+    color: green;
+    text-align: center;
+}
+
+#high-score {
+    border: 3px solid black;
+    font-size: 30px;
+}
+
+#player-score {
+    border-bottom: 3px solid black;
+    flex: 1;
+}
+
+#player-name {
+    border-bottom: 3px solid black;
+    flex: 1;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 20vw;
+    height: 100vh;
+    align-items: flex-start;
+}
+
+.score {
+    border-bottom: black 3px solid;
+    font-size: 25px;
+    color: black;
+    text-align: center;
+}
