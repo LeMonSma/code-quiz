@@ -78,8 +78,8 @@ const questions = [{
         answers: [
             { text: 'when a coding robot lifts up an object', correct: false },
             { text: 'when you assign a new value to a variable', correct: false },
-            { text: 'when js automatically takes all functions, variables, classes to the bottome of the scope', correct: false },
-            { text: 'when js automatically takes all funcntions, variables, classes to the top of the scope', correct: true }
+            { text: 'when js automatically takes all functions, variables, classes to the bottom of the scope', correct: false },
+            { text: 'when js automatically takes all functions, variables, classes to the top of the scope', correct: true }
         ]
     }
 ]
